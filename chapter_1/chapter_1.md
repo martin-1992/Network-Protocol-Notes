@@ -14,7 +14,7 @@
 - **数据链路层（又名数据链路层，网络接口层），用来处理连接网络的硬件部分.** 包括控制操作系统、硬件的设备驱动、NIC（Network Interface Card，网络适配器，即网卡），及光纤等物理可见部分（还包括连接器等一切传输媒介）。硬件上的范畴均在链路层的作用范围之内。
 
 #### TCP / IP 通信传输流
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p1.png)
 
 　　利用 TCP / IP 协议族进行网络通信时，会通过分层顺序与对方进行通信。发送端从应用层往下走，接收端则往应用层往上走。举例用 HTTP 来说明：
 1. 首先作为发送端的客户端在应用层（HTTP 协议）发出一个想看某个 Web 页面的 HTTP 请求；
@@ -22,22 +22,22 @@
 3. 在网络层（IP 协议），增加作为通信目的地的 MAC 地址后转发给链路层；
 4. 这样一来，发往网络的通信请求就准备齐全了。接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正接收到由客户端发送过来的 HTTP请求。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p2.png)
 
 　　发送端在层与层之间传输数据时，每经过一层时必定会被打上一个该层所属的首部信息。反之，接收端在层与层传输数据时，每经过一层时会把对应的首部消去。这种把数据信息包装起来的做法称为封装（encapsulate）。
 
 ### 与 HTTP 关系密切的协议 : IP、TCP 和 DNS
 - **负责传输的 IP 协议，通过 IP 地址和 MAC 地址将数据送往对方。** 按层次分，IP（Internet Protocol）网际协议位于网络层。TCP / IP 协议族中的 IP 指的是网际协议，是一种协议的名称。IP 协议的作用是把各种数据包传送给对方。而要保证确实传送到对方那里，则需要满足各类条件。其中两个重要的条件是 IP 地址和 MAC 地址（Media Access Control Address）。IP 地址指明了节点被分配到的地址，MAC 地址是指网卡所属的固定地址。IP 地址可以和 MAC 地址进行配对。IP 地址可变换，但 MAC 地址基本上不会更改。在网络上，通信的双方通常是经过多台计算机和网络设备中转才能连接到对方。而在进行中转时，会利用下一站中转设备的 MAC 地址来搜索下一个中转目标。这时，会采用 ARP 协议（Address Resolution Protocol），一种用以解析地址的协议，根据通信方的 IP 地址就可以反查出对应的 MAC 地址。在到达通信目标前的中转过程中，那些计算机和路由器等网络设备只能获悉很粗略的传输路线，这种机制称为路由选择（routing）；
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p3.png)
 
 - **确保可靠性的 TCP 协议，使用了三次握手策略确保数据发送成功。** 按层次分，TCP 位于传输层，提供可靠的字节流服务。所谓的字节流服务（Byte Stream Service）是指，为了方便传输，将大块数据分割成以报文段（segment）为单位的数据包进行管理。而可靠的传输服务是指，能够把数据准确可靠地传给对方。即 TCP 协议为了更容易传送大数据才把数据分割，而且 TCP 协议采用三次握手策略，会向对方确认是否成功发送。握手过程中使用了 TCP 的标志，SYN（synchronize） 和ACK（acknowledgement）。发送端首先发送一个带 SYN 标志的数据包给对方。接收端收到后，回传一个带有 SYN / ACK 标志的数据包以示传达确认信息。最后，发送端再回传一个带 ACK 标志的数据包，代表“握手”结束。若在握手过程中某个阶段中断，则会重新开始三次握手策略。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p4.png)
 
 - **负责域名解析的 DNS 服务，提供域名到 IP 地址之间的解析服务。** DNS（Domain Name System）服务是和 HTTP 协议一样位于应用层的协议，它提供域名到 IP 地址之间的解析服务。计算机既可以被赋予 IP 地址，也可以被赋予主机名和域名。用户通常使用主机名或域名来访问对方的计算机，DNS 协议提供通过域名查找 IP 地址，发送给计算机的是 IP 地址。计算机可通过 DNS 协议的逆向从 IP 地址反查域名。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p5.png)
 
 ### 概括下请求响应的流程：
 1. 客户端发起请求，想访问某个主机名或域名；
@@ -47,7 +47,7 @@
 5. TCP 协议使用三次握手策略确保数据发送成功，按序号以原来的顺序重组请求报文；
 6. 服务端获得请求报文，进行处理，处理结果同样使用 TCP / IP 协议进行回传。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p6.png)
 
 ### URI 和 URL
 　　URL（Uniform Resource Locator，统一资源定位符），使用 Web 浏览器等访问 Web 页面时需要输入的网页地址，比如 https://www.google.com/ 。URI 是 Uniform Resource Identifier 的缩写，这三个单词分别表示：
@@ -67,4 +67,4 @@
 - "uid=1"，查询字符串。针对已指定的文件路径内的资源，可以使用查询字符串传入任意参数，此项可选；
 - "ch1"，使用片段标识符通常可标记出已获取资源中的子资源（文档内的某个位置）。但在 RFC 中并没有明确规定其使用方法，该项也为可选项。
 
-![image.png](attachment:image.png)
+![Aaron Swartz](https://raw.githubusercontent.com/martin-1992/http_notebook/master/chapter_1/chapter_1_p7.png)

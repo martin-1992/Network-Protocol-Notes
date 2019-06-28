@@ -1,7 +1,6 @@
 
 ### HTTP 请求的发送
 
-- **使用 [DNS 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/DNS%20%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B)获取域名对应的 IP；**
 - **TCP 层将二进制流包装成报文段发送给服务器。** HTTP 协议是基于 TCP 协议的，使用面向连接的方式发送请求，通过 stream 二进制流的方式传给对方。到了 TCP 层，会把二进制流变成一个报文段发送给服务器，每个发送的报文段，都需要对方有一个回应 ACK，回复服务器报文已经到达了。如没回复，则可进行重传；
 - **IP 层通过发送 [ARP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/ARP%20%E5%8D%8F%E8%AE%AE%E8%8E%B7%E5%8F%96%20MAC%20%E5%9C%B0%E5%9D%80)获取 MAC 地址，进行传输。** TCP 层发送每一个报文时，将源地址（自己的地址）和目标地址（想去的地址）放到 IP 头里，由 IP 层进行传输。IP 层先查看目标地址和自己是否在同一个局域网内，是则发送 ARP 协议来请求这个目标地址对应的 MAC 地址，将源 MAC 和目标 MAC 放入 MAC 头，发送出去。不是则发送 ARP 协议，获取网关的 MAC 地址，将源 MAC 和网关 MAC 放入 MAC 头，发送出去。具体可看[网页访问 IP 的流程](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/%E8%AE%BF%E9%97%AE%E7%BD%91%E9%A1%B5%20IP%20%E7%9A%84%E6%B5%81%E7%A8%8B)；
 - **根据路由协议，最终找到符合目标地址的局域网。** 网关收到包发现 MAC 符合，取出目标 IP 地址，根据路由协议，找到下一跳的路由器，获取下一跳路由器的 MAC 地址，将包发给下一跳路由器。路由器一跳一跳终于到达目标的局域网。最后一跳的路由器发现目标地址在自己的某一个出口的局域网上。于是，在这个局域网上发送 ARP，获得这个目标地址的 MAC 地址，将包发出去；

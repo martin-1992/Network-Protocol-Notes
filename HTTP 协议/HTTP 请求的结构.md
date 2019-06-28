@@ -5,7 +5,7 @@
 ### HTTP 请求的结构
 　　HTTP 的报文分为三部分，请求行、首部和实体。
 
-![image.png](attachment:image.png)
+![avatar](photo_1.png)
 
 #### 请求行
 　　包括用于请求的方法，请求 URL 和 HTTP 版本。URL 为统一资源定位符，比如 https://www.google.com.hk/ ，版本为 HTTP 1.1，方法常用的有 GET、POST、PUT、DELETE。

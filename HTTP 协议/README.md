@@ -1,7 +1,10 @@
+### HTTP 协议介绍
+　　HTTP（HyperTextTransfer Protocol）为超文本传输协议，**确立了计算机之间进行交流的规范，即如何将超文本从一台机器传输到另一台机器的协议，通常运行在 TCP / IP 协议上。** 
 
-### HTTP 协议
-　　HTTP 协议是基于 TCP 协议的，使用[三次握手](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/TCP%20%E5%8D%8F%E8%AE%AE/TCP%20%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.md)建立 TCP 连接。HTTP 协议有 1.1 和 2 两种，大部分为 1.1，默认开启 Connection: keep-alive。这样只需要第一次请求进行三次握手建立连接就行，后面的请求都不用再进行三次握手操作，因为三次握手很耗时。<br />
-　　为此有很多程序都采取多路复用原则，即一个连接，多个 Channel，比如 Netty、[RabbitMQ 中在将生产者连接到 Broker 上](https://github.com/martin-1992/MQ-Notes/blob/master/RabbitMQ%20%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/chapter_2/README.md)。
+- HTTP 协议的功能是传输超文本，域名解析需要 DNS 协议，寻找 IP 需要 IP 协议，[三次握手](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/TCP%20%E5%8D%8F%E8%AE%AE/TCP%20%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.md)建立连接需要 TCP 协议，所以是运行在 TCP / IP 协议上。缺了这些，HTTP 协议是无法工作的；
+- HTTP 协议有 1.1 和 2 两种，大部分为 1.1，默认开启 Connection: keep-alive。这样只需要第一次请求进行三次握手建立连接就行，后面的请求都不用再进行三次握手操作，因为三次握手很耗时。为此有很多程序都采取多路复用原则，即一个连接，多个 Channel，比如 Netty、[RabbitMQ 中在将生产者连接到 Broker 上](https://github.com/martin-1992/MQ-Notes/blob/master/RabbitMQ%20%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97%E7%AC%94%E8%AE%B0/chapter_2/README.md)；
+- HTTP 协议的传输是双向，并且在传输过程中允许中转，可添加其它功能，比如数据压缩、安全认证等；
+- HTTP 协议传输的是超文本，载体为 HTML，包含文字、图片、视频、超链接等。
 
 ### [HTTP 请求的结构](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/HTTP%20%E5%8D%8F%E8%AE%AE/HTTP%20%E8%AF%B7%E6%B1%82%E7%9A%84%E7%BB%93%E6%9E%84.md)
 　　HTTP 请求的报文分为三部分，请求行、首部和实体。

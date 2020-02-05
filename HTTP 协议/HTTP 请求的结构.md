@@ -18,7 +18,7 @@
     1. scheme，协议名。比如 http、https、ftp 等，后接 "://"；
     2. host，主机名，可为 IP 地址或域名；
     3. port，端口号，可省略。HTTP 默认端口号为 80、HTTPS 为 443；
-    4. path，文件路径。比如 xx/cc/ 这种形式，后接 ?；
+    4. path，文件路径，资源所在的位置。比如 xx/cc/ 这种形式，后接 ?；
     5. key=value，查询参数。比如 newwindow=1，key 为 newwindow，value 为 1；
     6. URL 中的特殊字符，会进行转义。比如空格转为 "%20"，中文会使用 UTF-8 编码后再转义。
 - **HTTP 版本。** 比如 HTTP 1.1、HTTP 2.0 等。

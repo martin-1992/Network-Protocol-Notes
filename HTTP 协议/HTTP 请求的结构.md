@@ -8,16 +8,16 @@
 ![avatar](photo_1.png)
 
 #### 请求行
-　　由三部分组成。
+　　由三部分组成，分比为请求方法、请求 URL、HTTP 版本。
 
 ![avatar](photo_2.png)
 
-- 请求方法，常用的有 GET、POST 等；
+- **请求方法。** 常用的有 GET、POST 等；
     1. GET，客户端请求从服务器获取资源，比如图片、页面等；
     2. POST，客户端将信息放在 HTTP 实体正文中，传给服务端；
     3. PUT，修改服务端的资源。
-- 请求 URL，比如 https://www.google.com ；
-- HTTP 版本，比如 HTTP 1.1、HTTP 2.0 等。
+- **请求 URL。** 比如 https://www.google.com ；
+- **HTTP 版本。** 比如 HTTP 1.1、HTTP 2.0 等。
 
 #### 头部字段
 　　首部字段为 Key-Value，字段名为 Key，字段值为 Value。几个重要字段：

@@ -7,10 +7,14 @@
 - HTTP 协议传输的是超文本，载体为 HTML，包含文字、图片、视频、超链接等。
 
 ### [HTTP 请求的结构](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/HTTP%20%E5%8D%8F%E8%AE%AE/HTTP%20%E8%AF%B7%E6%B1%82%E7%9A%84%E7%BB%93%E6%9E%84.md)
-　　HTTP 请求的报文分为三部分，请求行、首部和实体。
+　　HTTP 请求的报文分为三部分，请求行、头部字段和实体正文。
+
+![avatar](photo_1.png)
 
 ### [HTTP 返回的结构](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/HTTP%20%E5%8D%8F%E8%AE%AE/HTTP%20%E8%BF%94%E5%9B%9E%E7%9A%84%E7%BB%93%E6%9E%84.md)
 　　其中状态行，包含各种状态码，比如 200，表示请求正常处理。
+
+![avatar](photo_3.png)
 
 ### [HTTP 请求的发送和返回](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/HTTP%20%E5%8D%8F%E8%AE%AE/HTTP%20%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%91%E9%80%81%E5%92%8C%E8%BF%94%E5%9B%9E.md)
 　　HTTP 请求的发送和返回，都遵循[数据包封装和拆封流程](https://github.com/martin-1992/Network-Protocol-Notes/blob/master/%E7%BD%91%E7%BB%9C%E5%88%86%E5%B1%82/README.md)。在网络上传输的数据包，需是完整的，即包含 MAC、IP、TCP 这些。

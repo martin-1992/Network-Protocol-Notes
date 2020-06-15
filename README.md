@@ -27,8 +27,7 @@
 
 #### 应用层
 
-- [HTTP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/HTTP%20%E5%8D%8F%E8%AE%AE)，HTTP（HyperTextTransfer Protocol）为超文本传输协议，确立了计算机之间进行交流的规范，即如何将超文本从一台机器传输到另一台机器的协议，通常运行在 TCP / IP 协议上；
-
+- [HTTP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/HTTP%20%E5%8D%8F%E8%AE%AE)，HTTP（HyperTextTransfer Protocol）为超文本传输协议，确立了计算机之间进行交流的规范，即如何将超文本从一台机器传输到另一台机器的协议。HTTP 是传输协议，寻找 IP、建立连接这些则是由下层来处理，比如 TCP/IP 协议，所以说 HTTP 协议运行在 TCP / IP 上；
 
 ### reference
 

@@ -4,8 +4,8 @@
 　　通过广播的方式来寻找目标 MAC 地址的，即已知 IP 地址，求 MAC 地址的协议。获取地址后，会使用缓存存放一段时间，这样就不用每次都要广播了。
 
 ### [DNS 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/DNS%20%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B)
-　　用于域名解析，获取 IP。按照域名，从上到下分配对应的 DNS 服务器。域名解析可返回多个 IP 地址（主机），可做负载均衡。<br />
-　　以 "https://www.google.com/" 为例，使用 "." 进行分割，最右边的 "com" 为顶级域名，"google" 为二级域名，层级逐渐递减，"www" 为主机名。
+　　用于域名解析，获取 IP。按照域名，从上到下分配对应的 DNS 服务器。域名解析可返回多个 IP 地址（主机），可做负载均衡。以 "https://www.google.com/" 为例，使用 "." 进行分割，最右边的 "com" 为顶级域名，"google" 为二级域名，层级逐渐递减，"www" 为主机名。<br />
+　　在微服务下，**负载均衡是通过 ZooKeeper 获取一个 IP 列表，在代码层面上进行负载均衡，** 选取一个提供者。优点是能快速上下线新 IP 主机，遇到突发流量时，也能通过批量上线一批新 IP，应该突发情况。
 
 ### [IP 地址和 MAC 地址](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/IP%20%E5%92%8C%20MAC)
 

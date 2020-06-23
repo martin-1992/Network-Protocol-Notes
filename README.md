@@ -15,7 +15,7 @@
 ### [TCP / IP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/TCP-IP%20%E5%8D%8F%E8%AE%AE)
 　　为多个网络通信协议的统称，有四层。由下至上，分别为链路层、网络层（IP 协议）、传输层（TCP 协议）、应用层（HTTP 协议、FTP 协议等），缺一不可。
 
-![avatar](./TCP-IP 协议/photo_2.png)
+![avatar](./TCP-IP%20协议/photo_2.png)
 
 #### 网络层
 

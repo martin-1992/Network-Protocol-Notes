@@ -7,7 +7,7 @@
 　　用于域名解析，获取 IP。按照域名，从上到下分配对应的 DNS 服务器。域名解析可返回多个 IP 地址（主机），可做负载均衡。<br />
 　　以 "https://www.google.com/" 为例，使用 "." 进行分割，最右边的 "com" 为顶级域名，"google" 为二级域名，层级逐渐递减，"www" 为主机名。
 
-![avatar](./DNS%20工作流程/photo_2.png)
+![avatar](./DNS%20工作流程/photo_1.png)
 
 　　在微服务下，**负载均衡是通过 ZooKeeper 获取一个 IP 列表，在代码层面上进行负载均衡，** 选取一个提供者。优点是能快速上下线新 IP 主机，遇到突发流量时，也能通过批量上线一批新 IP，应该突发情况。
 
@@ -23,18 +23,20 @@
 
 #### 网络层
 
-- [IP 协议]()
+- [IP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/IP%20%E5%92%8C%20MAC)
 - [ICMP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/ICMP%20%E4%B8%8E%20PING%20%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90)，即互联网控制报文协议，ICMP 报文是封装在 IP 包里。在遇到问题传输命令时，需要源地址和目标地址，PING 是基于 ICMP 协议工作的。
 
 #### 传输层
 
 - [TCP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/TCP%20%E5%8D%8F%E8%AE%AE)
-- [UDP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/UDP%20%E5%8D%8F%E8%AE%AE)
+- [UDP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/UDP%20%E5%8D%8F%E8%AE%AE)，　一个完整数据包为 [MAC 头，IP 头，UDP 头，HTTP 内容，HTTP 正文]。其中 UDP 头包含源端口、目标端口号、UDP 长度、UDP 校验和以及数据。
 
 #### 应用层
 
 - [HTTP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/HTTP%20%E5%8D%8F%E8%AE%AE)，HTTP（HyperTextTransfer Protocol）为超文本传输协议，确立了计算机之间进行交流的规范，即如何将超文本从一台机器传输到另一台机器的协议。HTTP 是传输协议，寻找 IP、建立连接这些则是由下层来处理，比如 TCP/IP 协议，所以说 HTTP 协议运行在 TCP / IP 上；
 
+
 ### reference
 
-- [部分笔记内容来自趣谈网络协议](https://time.geekbang.org/column/intro/85)；
+- [趣谈网络协议](https://time.geekbang.org/column/intro/85)；
+- [透视 HTTP 协议]()

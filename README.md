@@ -1,4 +1,4 @@
-# Network-Protocol-Notes
+## Network-Protocol-Notes
 
 ### [ARP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/ARP%20%E5%8D%8F%E8%AE%AE%E8%8E%B7%E5%8F%96%20MAC%20%E5%9C%B0%E5%9D%80)
 　　通过广播的方式来寻找目标 MAC 地址的，即已知 IP 地址，求 MAC 地址的协议。获取地址后，会使用缓存存放一段时间，这样就不用每次都要广播了。
@@ -23,18 +23,17 @@
 
 #### 网络层
 
-- [IP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/IP%20%E5%92%8C%20MAC)
+- IP 协议，通过 IP 协议，使用 IP 地址，可跨局域网定位到某台机器设备；
 - [ICMP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/ICMP%20%E4%B8%8E%20PING%20%E6%B5%81%E7%A8%8B%E8%A7%A3%E6%9E%90)，即互联网控制报文协议，ICMP 报文是封装在 IP 包里。在遇到问题传输命令时，需要源地址和目标地址，PING 是基于 ICMP 协议工作的。
 
 #### 传输层
 
-- [TCP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/TCP%20%E5%8D%8F%E8%AE%AE)
+- [TCP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/TCP%20%E5%8D%8F%E8%AE%AE)，使用三次握手建立连接，保证两台设备之间进行可靠传输；
 - [UDP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/UDP%20%E5%8D%8F%E8%AE%AE)，　一个完整数据包为 [MAC 头，IP 头，UDP 头，HTTP 内容，HTTP 正文]。其中 UDP 头包含源端口、目标端口号、UDP 长度、UDP 校验和以及数据。
 
 #### 应用层
 
 - [HTTP 协议](https://github.com/martin-1992/Network-Protocol-Notes/tree/master/HTTP%20%E5%8D%8F%E8%AE%AE)，HTTP（HyperTextTransfer Protocol）为超文本传输协议，确立了计算机之间进行交流的规范，即如何将超文本从一台机器传输到另一台机器的协议。HTTP 是传输协议，寻找 IP、建立连接这些则是由下层来处理，比如 TCP/IP 协议，所以说 HTTP 协议运行在 TCP / IP 上；
-
 
 ### reference
 
